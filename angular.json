@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test": {
+    "ProjetBachelor": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test",
+            "outputPath": "dist/ProjetBachelor",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "test:build:production"
+              "browserTarget": "ProjetBachelor:build:production"
             },
             "development": {
-              "browserTarget": "test:build:development"
+              "browserTarget": "ProjetBachelor:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,10 +80,10 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "test:build"
+            "browserTarget": "ProjetBachelor:build"
           }
         },
-        "test": {
+        "ProjetBachelor": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
