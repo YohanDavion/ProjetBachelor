@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { HelloworldComponent } from './helloworld/helloworld.component';
 import { AppRoutingModule } from './app-routing.module';
 import {ButtonModule} from 'primeng/button';
 import {MenubarModule} from 'primeng/menubar';
@@ -14,7 +13,6 @@ import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HelloworldComponent,
     HomeComponent
   ],
   imports: [
