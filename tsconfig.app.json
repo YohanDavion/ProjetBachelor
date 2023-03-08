@@ -1,14 +1,9 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./out-tsc/app",
+    "outDir": "./target/classes/static/app",
     "types": []
   },
-  "files": [
-    "src/main.ts"
-  ],
-  "include": [
-    "src/**/*.d.ts"
-  ]
+  "files": ["src/main/webapp/main.ts", "src/main/webapp/polyfills.ts"],
+  "include": ["src/main/webapp/**/*.d.ts"]
 }
