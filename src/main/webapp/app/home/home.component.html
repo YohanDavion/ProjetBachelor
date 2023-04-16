@@ -1,5 +1,4 @@
 <div class="row">
-  <div class="col-md-3"></div>
-
-  <div class="col-md-9"></div>
+  <div>Connecté : {{ getConnectionStatus() }}</div>
+  <button (click)="simulateConnection()">Simuler la Connexion</button>
 </div>
