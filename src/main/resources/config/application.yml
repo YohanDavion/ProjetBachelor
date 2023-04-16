@@ -96,7 +96,7 @@ spring:
     # The commented value for `active` can be replaced with valid Spring profiles to load.
     # Otherwise, it will be filled in by maven when building the JAR file
     # Either way, it can be overridden by `--spring.profiles.active` value passed in the commandline or `-Dspring.profiles.active` set in `JAVA_OPTS`
-    active: #spring.profiles.active#
+    active: dev
     group:
       dev:
         - dev
@@ -185,7 +185,8 @@ jhipster:
   #   allow-credentials: true
   #   max-age: 1800
   mail:
-    from: Airneis@localhost
+    from: support@hostyourdream.fr
+    base-url: mail.hostyourdream.fr:587
   api-docs:
     default-include-pattern: ${server.servlet.context-path:}/api/**
     management-include-pattern: ${server.servlet.context-path:}/management/**
