@@ -4,7 +4,7 @@
     "authenticationType": "jwt",
     "baseName": "Airneis",
     "blueprints": [],
-    "buildTool": "maven",
+    "buildTool": "",
     "cacheProvider": "no",
     "clientFramework": "angularX",
     "clientPackageManager": "npm",
