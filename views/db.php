@@ -1,9 +1,9 @@
 <?php
 
-$host = 'localhost:3306';
-$name = 'test';
-$user = 'root';
-$password = '';
+$host = 'db4free.net:3306';
+$name = 'projetweb_bsidn';
+$user = 'baptiste';
+$password = 'zUr6mq.##AP@EjU';
 
 try {
 	$pdo = new PDO("mysql:host=$host;dbname=$name", $user, $password);
