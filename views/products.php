@@ -121,7 +121,7 @@ if(isset($_POST['q']) && isset($_GET['c']) && CSRF::validateToken($_POST['token'
 									</div>
 									<div class="product-content">
 										<h4><a href="/item?id=<?= htmlspecialchars($product['id']) ?>"><?= htmlspecialchars($product['title']) ?></a></h4>
-										<p class="price">₦ <?= number_format($product['price'], 2) ?></p>
+										<p class="price"><?= number_format($product['price'], 2) ?>€</p>
 									</div>
 								</div>
 							</div>
