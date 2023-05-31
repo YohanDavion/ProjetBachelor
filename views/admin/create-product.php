@@ -61,7 +61,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
                             		<?php endforeach; ?>
                             	  </ul>
                         	    </div>
-                            	<input id="category" type="text" name="category" class="form-control" aria-label="Text input with dropdown button" value="<?= $items[0]['category'] ?>">
+                            	<input id="category" type="text" name="category" class="form-control" aria-label="Text input with dropdown button" >
                         	</div>
                         </div>
                         <div class="mb-3">
