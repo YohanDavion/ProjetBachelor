@@ -19,35 +19,12 @@ $ig = $statement->fetchColumn();
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <ul class="social-media">
-                        <li>
-                            <a href="https://www.facebook.com/<?= $fb ?>">
-                                <i class="tf-ion-social-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/<?= $ig ?>">
-                                <i class="tf-ion-social-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.twitter.com/<?= $tw ?>">
-                                <i class="tf-ion-social-twitter"></i>
-                            </a>
-                        </li>
-                    </ul>
                     <ul class="footer-menu text-uppercase">
                         <li>
                             <a href="contact.html">CONTACT</a>
                         </li>
                         <li>
-                            <a href="/products">SHOP</a>
-                        </li>
-                        <li>
-                            <a href="/privacy-policy">PRIVACY POLICY</a>
-                        </li>
-                        <li>
-                            <a href="/faq">FAQ</a>
+                            <a href="/products">PRODUITS</a>
                         </li>
                     </ul>
                     <p class="copyright-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script></p>
