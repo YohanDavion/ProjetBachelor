@@ -30,10 +30,10 @@ if($statement->rowCount() > 0) {
 						<table class="table">
 							<thead>
 								<tr>
-									<th>Item Name</th>
-									<th>Item Price</th>
-									<th>Quantity</th>
-									<th>Sub Total</th>
+									<th>Nom</th>
+									<th>Prix</th>
+									<th>Quantité(s)</th>
+									<th>Total</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -71,7 +71,7 @@ if($statement->rowCount() > 0) {
             <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <div class="block text-center">
-                    <h2 class="text-center">Transaction not found.</h2>
+                    <h2 class="text-center">Transaction introuvable</h2>
             </div>
             </div>
         </div>

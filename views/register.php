@@ -45,7 +45,7 @@ if(isset($_POST['register']) && CSRF::validateToken($_POST['token'])) {
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>Yem Yem Supermarket</title>
+  <title>ÀIRNES</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -82,7 +82,7 @@ if(isset($_POST['register']) && CSRF::validateToken($_POST['token'])) {
             <div class="row mt-30">
                 <div class="col-xs-12">
                     <div class="alertPart">
-                    <div class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span>Registration Failed!</span> Email already registered</div>
+                    <div class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span>Inscription échoué !</span> L'adresse email existe déjà</div>
                     </div>
                 </div>		
             </div>
@@ -96,7 +96,7 @@ if(isset($_POST['register']) && CSRF::validateToken($_POST['token'])) {
                         font-family="AustinBold, Austin" font-weight="bold">
                         <g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
                             <text id="AVIATO">
-                                <tspan x="108.94" y="325">YEM-YEM</tspan>
+                                <tspan x="108.94" y="325">ÀIRNES</tspan>
                             </text>
                         </g>
                     </g>
