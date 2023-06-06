@@ -40,7 +40,7 @@ if($statement->rowCount() > 0) {
 								<?php foreach($details as $detail): ?>
                                     <tr>
                                         <td><?= htmlspecialchars($detail['title']) ?></td>
-                                        <td>₦<?= number_format($detail['price'], 2) ?></td>
+                                        <td>€<?= number_format($detail['price'], 2) ?></td>
                                         <td><?= htmlspecialchars($detail['quantity']) ?></td>
                                         <td><?= number_format($detail['price'] * $detail['quantity'], 2) ?></td>
                                     </tr>
@@ -49,7 +49,7 @@ if($statement->rowCount() > 0) {
 									<td><b>Total</b></td>
 									<td></td>
 									<td></td>
-									<td><b>₦<?php
+									<td><b>€<?php
                                         $total = 0;
                                         foreach($details as $detail) {
                                             $total += $detail['price'] * $detail['quantity'];

@@ -35,7 +35,7 @@ $orders = $statement->fetchAll(PDO::FETCH_ASSOC);
                             <?php foreach($orders as $order): ?>
                                 <tr>
                                 <td><?= htmlspecialchars($order['timestamp']) ?></td>
-                                <td>₦<?php
+                                <td>€<?php
                                     $details = unserialize($order['details']);
                                     $total = 0;
                                     foreach($details as $detail) {

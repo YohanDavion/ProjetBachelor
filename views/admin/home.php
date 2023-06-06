@@ -96,7 +96,7 @@ $userCount = $pdo->query("SELECT count(*) FROM users")->fetchColumn();
                         <div class="col-sm-8">
                             <div class="detail">
                                 <p class="detail-subtitle">Revenue</p>
-                                <span class="number">₦ <?= number_format($revenue, 2) ?></span>
+                                <span class="number">€ <?= number_format($revenue, 2) ?></span>
                             </div>
                         </div>
                     </div>
