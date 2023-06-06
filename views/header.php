@@ -96,7 +96,7 @@ session_start();
                                     <?php endforeach; ?>
                                     <div class="cart-summary">
                                         <span>Total</span>
-                                        <span class="total-price">₦<?php 
+                                        <span class="total-price">€<?php 
                                                 $total = 0;
                                                 foreach($_SESSION['cart'] as $item) {
                                                     $total += $item['price'] * $item['quantity'];

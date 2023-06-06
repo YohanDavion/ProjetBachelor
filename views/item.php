@@ -109,7 +109,7 @@ $relatedItems = $statement->fetchAll(PDO::FETCH_ASSOC);
                         <h2><?= htmlspecialchars($item[0]['title']) ?></h2>
                         <?php CSRF::csrfInputField() ?>
                         <input type="text" name="title" value="<?= htmlspecialchars($item[0]['title']) ?>" hidden>
-                        <p class="product-price">₦<?= number_format($item[0]['price'], 2) ?></p>
+                        <p class="product-price">€<?= number_format($item[0]['price'], 2) ?></p>
                         <input type="text" name="price" value="<?= htmlspecialchars($item[0]['price']) ?>" hidden>
                         <input type="text" name="image" value="<?= htmlspecialchars(unserialize($item[0]['images'])[0]) ?>" hidden>
                         <p class="product-description mt-20">
@@ -172,7 +172,7 @@ $relatedItems = $statement->fetchAll(PDO::FETCH_ASSOC);
     					</div>
     					<div class="product-content">
     						<h4><a href="/item?id=<?= htmlspecialchars($item['id']) ?>"><?= htmlspecialchars($item['title']) ?></a></h4>
-    						<p class="price">₦ <?= number_format($item['price'], 2) ?></p>
+    						<p class="price">€ <?= number_format($item['price'], 2) ?></p>
     					</div>
     				</div>
     			</div>

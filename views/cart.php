@@ -76,12 +76,12 @@ if(isset($_POST['checkout']) && CSRF::validateToken($_POST['token'])) {
                               <a href="#!"><?= htmlspecialchars($item['title']) ?></a>
                             </div>
                           </td>
-                          <td class="">₦<?= number_format($item['price'], 2) ?></td>
+                          <td class="">€<?= number_format($item['price'], 2) ?></td>
                           <td class="">   <?= htmlspecialchars($item['quantity']) ?></td>
                           <td class="">
                             <a href="/cart-remove-item?id=<?= $item['id'] ?>" class="product-remove">Remove</a>
                           </td>
-                          <td class="">₦<?= number_format($item['price'] * htmlspecialchars($item['quantity']), 2) ?></td>
+                          <td class="">€<?= number_format($item['price'] * htmlspecialchars($item['quantity']), 2) ?></td>
                         </tr>
                       <?php endforeach; ?>
 
@@ -94,7 +94,7 @@ if(isset($_POST['checkout']) && CSRF::validateToken($_POST['token'])) {
                       <td class=""></td>
                       <td class=""></td>
                       <td class=""></td>
-                      <td class="">₦<?php
+                      <td class="">€<?php
                           if(!isset($_SESSION['cart'])) {
                             echo '0.00';
                           } else {
