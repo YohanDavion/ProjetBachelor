@@ -8,18 +8,6 @@ $statement->execute();
 $about = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 $statement = $pdo->prepare("SELECT value FROM contact WHERE name=?");
-$statement->execute(array('facebook'));
-$fb = $statement->fetchColumn();
-
-$statement = $pdo->prepare("SELECT value FROM contact WHERE name=?");
-$statement->execute(array('twitter'));
-$tw = $statement->fetchColumn();
-
-$statement = $pdo->prepare("SELECT value FROM contact WHERE name=?");
-$statement->execute(array('instgram'));
-$ig = $statement->fetchColumn();
-
-$statement = $pdo->prepare("SELECT value FROM contact WHERE name=?");
 $statement->execute(array('phone'));
 $phone = $statement->fetchColumn();
 
@@ -35,10 +23,10 @@ $email = $statement->fetchColumn();
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 mt-20">
-				<img class="img-responsive" src="views/images/cart.jpg">
+				<img class="img-responsive" src="views/images/shop.jpg">
 			</div>
 			<div class="col-md-6">
-				<h2>About Our Shop</h2>
+				<h2>A propos</h2>
 				<p><?= htmlspecialchars($about[0]['about']) ?></p>
 			</div>
 		</div>
@@ -51,21 +39,13 @@ $email = $statement->fetchColumn();
                     </li>
                     <li>
                         <i class="tf-ion-android-phone-portrait"></i>
-                        <span>Phone: <?= htmlspecialchars($phone) ?></span>
+                        <span>Téléphone : <?= htmlspecialchars($phone) ?></span>
                     </li>
                     <li>
                         <i class="tf-ion-android-mail"></i>
-                        <span>Email: <?= htmlspecialchars($email) ?></span>
+                        <span>Email : <?= htmlspecialchars($email) ?></span>
                     </li>
                 </ul>
-                <!-- Footer Social Links -->
-                <div class="social-icon">
-                    <ul>
-                        <li><a class="fb-icon" href="https://facebook.com/<?= $fb ?>"><i class="tf-ion-social-facebook"></i></a></li>
-                        <li><a href="https://twitter.com/<?= $tw ?>"><i class="tf-ion-social-twitter"></i></a></li>
-                    </ul>
-                </div>
-                <!--/. End Footer Social Links -->
             </div>
 		</div>
 	</div>
