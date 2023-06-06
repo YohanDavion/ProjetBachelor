@@ -18,8 +18,8 @@ $orders = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<div class="row">
 			<div class="col-md-12">
 				<ul class="list-inline dashboard-menu text-center">
-                    <li><a href="/profile">Profile Details</a></li>
-					<li><a class="active" href="/orders">Orders</a></li>
+                    <li><a href="/profile">Information Utilisateur</a></li>
+					<li><a class="active" href="/orders">Commandes</a></li>
 				</ul>
 				<div class="dashboard-wrapper user-dashboard">
                     <div class="table-responsive">
@@ -27,7 +27,7 @@ $orders = $statement->fetchAll(PDO::FETCH_ASSOC);
                             <thead>
                             <tr>
                                 <th>Date</th>
-                                <th>Total Price</th>
+                                <th>Prix Total</th>
                                 <th></th>
                             </tr>
                             </thead>

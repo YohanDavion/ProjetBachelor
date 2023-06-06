@@ -74,13 +74,13 @@ if(isset($_POST['q']) && isset($_GET['c']) && CSRF::validateToken($_POST['token'
 		<div class="row">
 			<div class="col-md-3">
 				<div class="widget product-category">
-					<h4 class="widget-title">Categories</h4>
+					<h4 class="widget-title">Catégorie</h4>
 					<div class="panel-group commonAccordion" id="accordion" role="tablist" aria-multiselectable="true">
 					  	<div class="panel panel-default">
 							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-body">
 									<ul>
-										<li><a href="/products">All</a></li>
+										<li><a href="/products">Tout</a></li>
 										<?php foreach($categories as $category): ?>
 											<li><a href="/products?c=<?= htmlspecialchars($category['title']); ?>"><?= htmlspecialchars($category['title']); ?></a></li>
 										<?php endforeach; ?>
@@ -130,8 +130,8 @@ if(isset($_POST['q']) && isset($_GET['c']) && CSRF::validateToken($_POST['token'
 						<div class="col-md-6 col-md-offset-3">
 							<div class="block text-center">
 								<i class="tf-ion-ios-cart-outline"></i>
-								<h2 class="text-center">No items found.</h2>
-								<a href="/products" class="btn btn-main mt-20">Return to shop</a>
+								<h2 class="text-center">Aucun produit trouvé</h2>
+								<a href="/products" class="btn btn-main mt-20">Retour à la boutique</a>
 							</div>
 						</div>
 					<?php endif ?>

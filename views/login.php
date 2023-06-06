@@ -39,7 +39,7 @@ if(isset($_POST['login']) && CSRF::validateToken($_POST['token'])) {
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>Yem Yem Supermarket</title>
+  <title>ÀIRNES</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -92,13 +92,13 @@ if(isset($_POST['login']) && CSRF::validateToken($_POST['token'])) {
                         font-family="AustinBold, Austin" font-weight="bold">
                         <g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
                             <text id="AVIATO">
-                                <tspan x="108.94" y="325">YEM-YEM</tspan>
+                                <tspan x="108.94" y="325">ÀIRNES</tspan>
                             </text>
                         </g>
                     </g>
                 </svg>
             </a>
-            <h2 class="text-center">Welcome Back</h2>
+            <h2 class="text-center">re-Bienvenue</h2>
             <form class="text-left clearfix" method="post" action="<?= $_SERVER['REQUEST_URI'] ?>" >
                 <?php CSRF::csrfInputField() ?>
                 <div class="form-group">
@@ -111,8 +111,8 @@ if(isset($_POST['login']) && CSRF::validateToken($_POST['token'])) {
                     <button name="login" type="submit" class="btn btn-main text-center" >Login</button>
                 </div>
             </form>
-            <p class="mt-20">Don't have an account ?<a href="/register"> Create New Account</a></p>
-            <p class="mt-20"><a href="/forgot-password">Forgot Password?</a></p>
+            <p class="mt-20">Pas de compte ?<a href="/register"> Créer un nouveau compte</a></p>
+            <p class="mt-20"><a href="/forgot-password">Mot de passe oublié ?</a></p>
             </div>
         </div>
         </div>

@@ -47,8 +47,8 @@ $relatedItems = $statement->fetchAll(PDO::FETCH_ASSOC);
         <div class="row">
 			<div class="col-md-6">
 				<ol class="breadcrumb">
-					<li><a href="/">Home</a></li>
-					<li><a href="/products">Shop</a></li>
+					<li><a href="/">Accueil</a></li>
+					<li><a href="/products">Produits</a></li>
 					<li class="active"><?= htmlspecialchars($item[0]['category']); ?></li>
 				</ol>
 			</div>
@@ -117,13 +117,13 @@ $relatedItems = $statement->fetchAll(PDO::FETCH_ASSOC);
                             <input type="text" name="description" value="<?= htmlspecialchars($item[0]['description']) ?>" hidden>
                         </p>
                         <div class="product-quantity">
-                            <span>Quantity:</span>
+                            <span>Quantité :</span>
                             <div class="product-quantity-slider">
                                 <input id="product-quantity" type="number" min=1 value="1" name="quantity">
                             </div>
                         </div>
                         <div class="product-category">
-                            <span>Categories:</span>
+                            <span>Catégorie:</span>
                             <ul>
                                 <li><a href="/products?c=<?= htmlspecialchars($item[0]['category']) ?>"><?= htmlspecialchars($item[0]['category']) ?></a></li>
                                 <input type="text" name="category" value="<?= htmlspecialchars($item[0]['category']) ?>" hidden>
@@ -131,9 +131,9 @@ $relatedItems = $statement->fetchAll(PDO::FETCH_ASSOC);
                         </div>
 						<input type="text" name="id" value="<?= htmlspecialchars($item[0]['id']) ?>" hidden>
                         <?php if($inCart): ?>
-							<button name="cart" type="submit" class="btn btn-main text-center" disabled>Add to Cart</button>
+							<button name="cart" type="submit" class="btn btn-main text-center" disabled>Ajouter au panier</button>
 						<?php else: ?>
-							<button name="cart" type="submit" class="btn btn-main text-center">Add to Cart</button>
+							<button name="cart" type="submit" class="btn btn-main text-center">Ajouter au panier</button>
 						<?php endif ?>
                     </div>
                 </form>
@@ -145,7 +145,7 @@ $relatedItems = $statement->fetchAll(PDO::FETCH_ASSOC);
 	<div class="container">
 		<div class="row">
 			<div class="title text-center">
-				<h2>Related Products</h2>
+				<h2>Produits similaires</h2>
 			</div>
 		</div>
 		<div class="row">
