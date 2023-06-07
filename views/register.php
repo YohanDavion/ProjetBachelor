@@ -105,25 +105,25 @@ if(isset($_POST['register']) && CSRF::validateToken($_POST['token'])) {
             <form class="text-left clearfix" method="post" action="<?= $_SERVER['REQUEST_URI'] ?>" >
                 <?php CSRF::csrfInputField() ?>
                 <div class="form-group">
-                    <input type="text" name="firstname" class="form-control"  placeholder="Firstname">
+                    <input type="text" name="firstname" class="form-control"  placeholder="Prénom">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="lastname" class="form-control"  placeholder="Lastname">
+                    <input type="text" name="lastname" class="form-control"  placeholder="Nom">
                 </div>
                 <div class="form-group">
                     <input type="email" name="email" class="form-control"  placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <input type="tel" name="phone" class="form-control"  placeholder="Phone">
+                    <input type="tel" name="phone" class="form-control"  placeholder="Téléphone">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="address" class="form-control"  placeholder="Address">
+                    <input type="text" name="address" class="form-control"  placeholder="Adresse">
                 </div>
                 <div class="form-group">
-                    <input type="password" name="password" class="form-control" placeholder="Password">
+                    <input type="password" name="password" class="form-control" placeholder="Mot de Passe">
                 </div>
                 <div class="text-center">
-                    <button name="register" type="submit" class="btn btn-main text-center" >Register</button>
+                    <button name="register" type="submit" class="btn btn-main text-center" >Inscription</button>
                 </div>
             </form>
             </div>
