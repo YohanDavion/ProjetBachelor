@@ -73,7 +73,7 @@ if(isset($_POST['login']) && CSRF::validateToken($_POST['token'])) {
             <div class="row mt-30">
                 <div class="col-xs-12">
                     <div class="alertPart">
-                    <div class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span>Login Failed!</span> Invalid username/password</div>
+                    <div class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span>Connexion impossible !</span> Mauvais identifiant et/ou mot de passe</div>
                     </div>
                 </div>		
             </div>
@@ -94,7 +94,7 @@ if(isset($_POST['login']) && CSRF::validateToken($_POST['token'])) {
                     </g>
                 </svg>
             </a>
-            <h2 class="text-center">re-Bienvenue</h2>
+            <h2 class="text-center">Bienvenue</h2>
             <form class="text-left clearfix" method="post" action="<?= $_SERVER['REQUEST_URI'] ?>" >
                 <?php CSRF::csrfInputField() ?>
                 <div class="form-group">
