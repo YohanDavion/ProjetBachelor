@@ -41,13 +41,9 @@ if(isset($_POST['login']) && CSRF::validateToken($_POST['token'])) {
   <meta charset="utf-8">
   <title>ÀIRNES</title>
 
-  <!-- Mobile Specific Metas
-  ================================================== -->
+  <!-- Configuration pour le responsive sur mobile-->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Yem-Yem Supermarket">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="author" content="Yem-Yem">
-  <meta name="generator" content="Yem-Yem Supermarket">
   
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="views/images/favicon.png" />
