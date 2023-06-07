@@ -1,16 +1,24 @@
 <?php
 
-session_start();
+require __DIR__ . '/header.php';
+require __DIR__ . '/db.php';
+require __DIR__ . '/../csrf.php';
 
-if(!isset($_GET['id'])) {
+//session_start();
+
+if (!isset($_GET['id'])) {
     header('Location: /404');
 }
 
 $inCart = false;
 
+// Vérifier si la clé "cart" existe dans $_SESSION
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = array(); // Initialiser la clé "cart" avec un tableau vide
+}
 
-if(isset($_POST['cart']) && CSRF::validateToken($_POST['token'])) {
-	$_SESSION['cart'][$_POST['id']] = array(
+if (isset($_POST['cart']) && CSRF::validateToken($_POST['token'])) {
+    $_SESSION['cart'][$_POST['id']] = array(
         'id' => $_POST['id'],
         'title' => $_POST['title'],
         'price' => $_POST['price'],
@@ -21,6 +29,7 @@ if(isset($_POST['cart']) && CSRF::validateToken($_POST['token'])) {
     );
 }
 
+
 foreach($_SESSION['cart'] as $item) {
 	if($item['id'] == $_GET['id']) {
 		$inCart = true;
@@ -28,9 +37,7 @@ foreach($_SESSION['cart'] as $item) {
 	}
 }
 
-require __DIR__ . '/header.php';
-require __DIR__ . '/db.php';
-require __DIR__ . '/../csrf.php';
+
 
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $statement = $pdo->prepare("SELECT * FROM products WHERE id=?");
