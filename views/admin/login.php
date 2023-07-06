@@ -33,7 +33,7 @@ if(isset($_POST['submit']) && CSRF::validateToken($_POST['token'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Yem-Yem | Admin</title>
+    <title>Airnes | Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
     <link href="/views/admin/assets/css/auth.css" rel="stylesheet">
 </head>
@@ -44,28 +44,28 @@ if(isset($_POST['submit']) && CSRF::validateToken($_POST['token'])) {
             <div class="card">
                 <div class="card-body text-center">
                     <?php if($error): ?>
-                        <div class="alert alert-danger" role="alert">Login Failed, Incorrent Username/Password</div>
+                        <div class="alert alert-danger" role="alert">Connexion impossible, mauvais identifiant/mot de passe</div>
                     <?php endif ?>
-                    <h6 class="mb-4 text-muted">Login to your account</h6>
+                    <h6 class="mb-4 text-muted">Se connecter a son compte</h6>
                     <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
                         <?php CSRF::csrfInputField() ?>
                         <div class="mb-3 text-start">
-                            <label for="username" class="form-label">Username</label>
+                            <label for="username" class="form-label">Identifiant</label>
                             <input type="text" name="username" class="form-control" placeholder="Username" required>
                         </div>
                         <div class="mb-3 text-start">
-                            <label for="password" class="form-label">Password</label>
+                            <label for="password" class="form-label">Mot de passe</label>
                             <input type="password" name="password" class="form-control" placeholder="Password" required>
                         </div>
                         <div class="mb-3 text-start">
                             <div class="form-check">
                               <input class="form-check-input" name="remember" type="checkbox" value="" id="check1">
                               <label class="form-check-label" for="check1">
-                                Remember me on this device
+                                Se souvenir de moi
                               </label>
                             </div>
                         </div>
-                        <button type="submit" name="submit" class="btn btn-primary shadow-2 mb-4">Login</button>
+                        <button type="submit" name="submit" class="btn btn-primary shadow-2 mb-4">Se connecter</button>
                     </form>
                 </div>
             </div>

@@ -54,8 +54,8 @@ $userCount = $pdo->query("SELECT count(*) FROM users")->fetchColumn();
 <div class="container">
     <div class="row">
         <div class="col-md-12 page-header">
-            <div class="page-pretitle">Overview</div>
-            <h2 class="page-title">Home</h2>
+            <div class="page-pretitle">Vue d'ensemble</div>
+            <h2 class="page-title">Accueil</h2>
         </div>
     </div>
     <div class="row">
@@ -70,7 +70,7 @@ $userCount = $pdo->query("SELECT count(*) FROM users")->fetchColumn();
                         </div>
                         <div class="col-sm-8">
                             <div class="detail">
-                                <p class="detail-subtitle">Orders</p>
+                                <p class="detail-subtitle">Commandes</p>
                                 <span class="number"><?= $orderCount ?></span>
                             </div>
                         </div>
@@ -78,7 +78,7 @@ $userCount = $pdo->query("SELECT count(*) FROM users")->fetchColumn();
                     <div class="footer">
                         <hr />
                         <div class="stats">
-                            <i class="fas fa-calendar"></i> For Today
+                            <i class="fas fa-calendar"></i> Pour aujourd'hui
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@ $userCount = $pdo->query("SELECT count(*) FROM users")->fetchColumn();
                         </div>
                         <div class="col-sm-8">
                             <div class="detail">
-                                <p class="detail-subtitle">Revenue</p>
+                                <p class="detail-subtitle">Revenus</p>
                                 <span class="number">€ <?= number_format($revenue, 2) ?></span>
                             </div>
                         </div>
@@ -103,7 +103,7 @@ $userCount = $pdo->query("SELECT count(*) FROM users")->fetchColumn();
                     <div class="footer">
                         <hr />
                         <div class="stats">
-                            <i class="fas fa-calendar"></i> For Today
+                            <i class="fas fa-calendar"></i> Pour aujourd'hui
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@ $userCount = $pdo->query("SELECT count(*) FROM users")->fetchColumn();
                         </div>
                         <div class="col-sm-8">
                             <div class="detail">
-                                <p class="detail-subtitle">Users</p>
+                                <p class="detail-subtitle">Utilisateurs</p>
                                 <span class="number"><?= $userCount ?></span>
                             </div>
                         </div>
@@ -128,7 +128,7 @@ $userCount = $pdo->query("SELECT count(*) FROM users")->fetchColumn();
                     <div class="footer">
                         <hr />
                         <div class="stats">
-                            <i class="fas fa-calendar"></i> All
+                            <i class="fas fa-calendar"></i> Au total
                         </div>
                     </div>
                 </div>
@@ -143,8 +143,8 @@ $userCount = $pdo->query("SELECT count(*) FROM users")->fetchColumn();
                     <div class="card">
                         <div class="content">
                             <div class="head">
-                                <h5 class="mb-0">Orders Overview</h5>
-                                <p class="text-muted">Orders in the last 7 days</p>
+                                <h5 class="mb-0">Vue d'ensemble des commandes</h5>
+                                <p class="text-muted">Commandes sur les 7 derniers jours</p>
                             </div>
                             <div class="canvas-wrapper">
                                 <canvas class="chart" id="orders"></canvas>
@@ -156,8 +156,8 @@ $userCount = $pdo->query("SELECT count(*) FROM users")->fetchColumn();
                     <div class="card">
                         <div class="content">
                             <div class="head">
-                                <h5 class="mb-0">Revenue Overview</h5>
-                                <p class="text-muted">Revenue in the last 7 days</p>
+                                <h5 class="mb-0">Vue d'ensemble des revenus</h5>
+                                <p class="text-muted">Revenus des 7 derniers jours</p>
                             </div>
                             <div class="canvas-wrapper">
                                 <canvas class="chart" id="revenue"></canvas>
@@ -165,76 +165,6 @@ $userCount = $pdo->query("SELECT count(*) FROM users")->fetchColumn();
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-12">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title"></h5>
-                    <div class="mb-3 row">
-                        <label class="col-sm-2">Send Email <br>
-                            <!-- <small class="text-info">Normal Bootstrap elements</small> -->
-                        </label>
-                        <form action="/admin/home" method="post">
-                        <?php CSRF::csrfInputField() ?>
-                        <div class="col-sm-10">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio1" value="all">
-                                <label class="form-check-label" for="radio1">All customers</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio2" checked value="specify">
-                                <label class="form-check-label" for="radio2">Specify Email</label>
-                            </div>
-                            <div class="form-check" id="email-field">
-                                <input type="email" name="email" placeholder="Email" class="form-control">
-                            </div><br>
-                            <div class="form-check">
-                                <input type="text" name="title" placeholder="Title" class="form-control">
-                            </div><br>
-                          <!--  <div class="form-check">
-                                <label class="form-label">Attachment</label>
-                                <input class="form-control" name="attachment" type="file" id="formFile1">
-                                <small class="text-muted"></small>
-                            </div><br>-->
-                            <div class="form-check">
-                                <textarea style="resize:none" type="text" name="message" placeholder="Message..." class="form-control" rows="3"></textarea>
-                            </div><br>
-                            <div class="form-check">
-                                <button type="submit" name="send-email" class="btn btn-primary col-sm-4">Send</button>
-                            </div>
-                        </form>
-                        </div>
-                    </div>
-                    <div class="line"></div><br>
-                    <div class="mb-3 row">
-                        <label class="col-sm-2">Database:</label>
-                        <div class="col-sm-10">
-                            <div class="mb-3 row">
-                                <div class="col-sm-12">
-                                    <div class="row">
-                                        <form action="/admin/home" id="import-form" method="post">
-                                            <div class="col-sm-1">
-                                                <?php CSRF::csrfInputField() ?>
-                                                <input type="file" name="file" id="file" required>
-                                            </div><br>
-                                            <div class="col-sm-12">
-                                                <button name="import" type="submit" class="btn btn-secondary mb-2"><i class="fas fa-file-import"></i> Import</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <form action="/admin/home" method="post">
-                                        <?php CSRF::csrfInputField() ?>
-                                        <button name="export" type="submit" class="btn btn-primary mb-2"><i class="fas fa-file-export"></i> Export</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     </div>

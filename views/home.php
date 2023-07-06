@@ -8,7 +8,34 @@ $requete->execute();
 if ($requete->rowCount() > 0) {
     $produits = $requete->fetchAll(PDO::FETCH_ASSOC);
 }
+
+$sliderImages = [];
+$sliderRequete = $pdo->prepare("SELECT * FROM slider");
+$sliderRequete->execute();
+if ($sliderRequete->rowCount() > 0) {
+    $sliderImages = $sliderRequete->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <?php $active = true; ?>
+        <?php foreach ($sliderImages as $sliderImage) : ?>
+            <div class="carousel-item <?php if ($active) { echo 'active'; $active = false; } ?>">
+                <img src="<?= htmlspecialchars($sliderImage['images']) ?>" class="d-block w-100" alt="<?= htmlspecialchars($sliderImage['images']) ?>">
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
 <section class="products section bg-gray">
     <div class="container">
         <div class="row">
@@ -35,5 +62,7 @@ if ($requete->rowCount() > 0) {
         </div>
     </div>
 </section>
+
+
 
 <?php require __DIR__ . '/footer.php'; ?>
