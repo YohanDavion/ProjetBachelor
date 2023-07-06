@@ -22,11 +22,11 @@ if($statement->rowCount() > 0) {
             <table width="100%" class="table table-hover" id="dataTables-example">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Details</th>
-                        <th>Timestamp</th>
+                        <th>Nom</th>
+                        <th>Mail</th>
+                        <th>Adresse</th>
+                        <th>Détails</th>
+                        <th>Date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,10 +40,10 @@ if($statement->rowCount() > 0) {
                                     <table width="100%" class="table table-hover" id="dataTables-example">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Price</th>
-                                                <th>Quantity</th>
-                                                <th>Sub-Total</th>
+                                                <th>Nom</th>
+                                                <th>Prix</th>
+                                                <th>Quantité</th>
+                                                <th>Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
