@@ -27,7 +27,6 @@ $ig = $statement->fetchColumn();
                             <a href="/products">PRODUITS</a>
                         </li>
                     </ul>
-                    <p class="copyright-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script></p>
                 </div>
             </div>
         </div>
