@@ -78,17 +78,17 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <?php if($edit): ?>
         <div class="card">
-            <div class="card-header">Create Product</div>
+            <div class="card-header">Ajouter un produit</div>
             <div class="card-body">
                 <div class="col-md-6">
                     <form action="/admin/products" method="post" enctype="multipart/form-data">
                         <?php CSRF::csrfInputField() ?>
                         <div class="mb-3">
-                            <label class="form-label">Name</label>
+                            <label class="form-label">Nom</label>
                             <input type="text" name="name" class="form-control" value="<?= $items[0]['title'] ?>">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Price</label>
+                            <label class="form-label">Prix</label>
                             <input type="number" name="price" class="form-control" value="<?= $items[0]['price'] ?>">
                         </div>
                         <div class="mb-3">
@@ -96,11 +96,11 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
                             <textarea class="form-control" name="description" style="resize:none"><?= $items[0]['description'] ?></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="language" class="form-label">Category</label>
+                            <label for="language" class="form-label">Catégorie</label>
                             <div class="input-group mb3">
                         	    <div class="dropdown input-group-prepend">
                             	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            		Choose
+                            		Choisir
                             	  </button>
                             	  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             		<?php foreach($categories as $category): ?>
@@ -115,7 +115,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
                         <div class="mb-3">
                             <label class="form-label">Images</label>
                             <input class="form-control" name="files[]" type="file" id="formFile1" multiple>
-                            <small class="text-muted">Select product images</small>
+                            <small class="text-muted">Selectionner une image</small>
                         </div>
                         <div class="mb-3 text-end">
                             <input type="text" name="id" value="<?= $items[0]['id'] ?>" hidden>
@@ -131,10 +131,10 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
                 <table width="100%" class="table table-hover" id="dataTables-example">
                     <thead>
                         <tr>
-                            <th>Title</th>
-                            <th>Price</th>
+                            <th>Titre</th>
+                            <th>Prix</th>
                             <th>Description</th>
-                            <th>Category</th>
+                            <th>Categories</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -143,7 +143,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
                             <?php foreach($items as $item): ?>
                                 <tr>
                                     <td><?= $item['title'] ?></td>
-                                    <td>₦ <?= number_format($item['price'], 2) ?></td>
+                                    <td>€ <?= number_format($item['price'], 2) ?></td>
                                     <td><?= $item['description'] ?></td>
                                     <td><?= $item['category'] ?></td>
                                     <td class="text-end">

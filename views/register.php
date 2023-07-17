@@ -45,7 +45,7 @@ if(isset($_POST['register']) && CSRF::validateToken($_POST['token'])) {
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>Yem Yem Supermarket</title>
+  <title>ÀIRNES</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -82,7 +82,7 @@ if(isset($_POST['register']) && CSRF::validateToken($_POST['token'])) {
             <div class="row mt-30">
                 <div class="col-xs-12">
                     <div class="alertPart">
-                    <div class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span>Registration Failed!</span> Email already registered</div>
+                    <div class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i><span>Inscription échoué !</span> L'adresse email existe déjà</div>
                     </div>
                 </div>		
             </div>
@@ -96,7 +96,7 @@ if(isset($_POST['register']) && CSRF::validateToken($_POST['token'])) {
                         font-family="AustinBold, Austin" font-weight="bold">
                         <g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
                             <text id="AVIATO">
-                                <tspan x="108.94" y="325">YEM-YEM</tspan>
+                                <tspan x="108.94" y="325">ÀIRNES</tspan>
                             </text>
                         </g>
                     </g>
@@ -105,25 +105,25 @@ if(isset($_POST['register']) && CSRF::validateToken($_POST['token'])) {
             <form class="text-left clearfix" method="post" action="<?= $_SERVER['REQUEST_URI'] ?>" >
                 <?php CSRF::csrfInputField() ?>
                 <div class="form-group">
-                    <input type="text" name="firstname" class="form-control"  placeholder="Firstname">
+                    <input type="text" name="firstname" class="form-control"  placeholder="Prénom">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="lastname" class="form-control"  placeholder="Lastname">
+                    <input type="text" name="lastname" class="form-control"  placeholder="Nom">
                 </div>
                 <div class="form-group">
                     <input type="email" name="email" class="form-control"  placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <input type="tel" name="phone" class="form-control"  placeholder="Phone">
+                    <input type="tel" name="phone" class="form-control"  placeholder="Téléphone">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="address" class="form-control"  placeholder="Address">
+                    <input type="text" name="address" class="form-control"  placeholder="Adresse">
                 </div>
                 <div class="form-group">
-                    <input type="password" name="password" class="form-control" placeholder="Password">
+                    <input type="password" name="password" class="form-control" placeholder="Mot de Passe">
                 </div>
                 <div class="text-center">
-                    <button name="register" type="submit" class="btn btn-main text-center" >Register</button>
+                    <button name="register" type="submit" class="btn btn-main text-center" >Inscription</button>
                 </div>
             </form>
             </div>

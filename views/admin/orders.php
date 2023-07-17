@@ -22,11 +22,11 @@ if($statement->rowCount() > 0) {
             <table width="100%" class="table table-hover" id="dataTables-example">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Details</th>
-                        <th>Timestamp</th>
+                        <th>Nom</th>
+                        <th>Mail</th>
+                        <th>Adresse</th>
+                        <th>Détails</th>
+                        <th>Date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,10 +40,10 @@ if($statement->rowCount() > 0) {
                                     <table width="100%" class="table table-hover" id="dataTables-example">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Price</th>
-                                                <th>Quantity</th>
-                                                <th>Sub-Total</th>
+                                                <th>Nom</th>
+                                                <th>Prix</th>
+                                                <th>Quantité</th>
+                                                <th>Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -53,9 +53,9 @@ if($statement->rowCount() > 0) {
                                                 foreach($details as $detail) {
                                                     echo '<tr>';
                                                     echo '<td>' . $detail['title'] . '</td>';
-                                                    echo '<td>₦ ' . number_format($detail['price'], 2) . '</td>';
+                                                    echo '<td>€ ' . number_format($detail['price'], 2) . '</td>';
                                                     echo '<td>' . $detail['quantity'] . '</td>';
-                                                    echo '<td>₦ ' . number_format($detail['price'] * $detail['quantity'], 2) . '</td>';
+                                                    echo '<td>€ ' . number_format($detail['price'] * $detail['quantity'], 2) . '</td>';
                                                     echo '</tr>';
                                                     $total += $detail['price'] * $detail['quantity'];
                                                 }
@@ -63,7 +63,7 @@ if($statement->rowCount() > 0) {
                                                 echo '<td>Total</td>';
                                                 echo '<td></td>';
                                                 echo '<td></td>';
-                                                echo '<td>₦ ' . number_format($total, 2) . '</td>';
+                                                echo '<td>€ ' . number_format($total, 2) . '</td>';
                                                 echo '</tr>';
                                             ?>
                                         </tbody>

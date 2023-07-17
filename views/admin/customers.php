@@ -60,12 +60,11 @@ if(isset($_GET['id'])) {
 <div class="container">
     <div class="page-title">
         <h3>Customers
-        <a href="/admin/customers/create" class="btn btn-sm btn-outline-primary float-end"><i class="fas fa-plus"></i> Add</a>
         </h3>
     </div>
     <?php if($edit): ?>
         <div class="card">
-            <div class="card-header">Edit Customer</div>
+            <div class="card-header">Modifier Client</div>
             <div class="card-body">
                 <form accept-charset="utf-8" method="post" action="/admin/customers">
                     <?php CSRF::csrfInputField() ?>
@@ -92,7 +91,7 @@ if(isset($_GET['id'])) {
                         </div>
                     </div>
                     <input type="text" name="id" value="<?= $customers[0]['id'] ?>" hidden>
-                    <button name="submit" type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
+                    <button name="submit" type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Enregistrer</button>
                 </form>
             </div>
         </div>
@@ -102,10 +101,10 @@ if(isset($_GET['id'])) {
                 <table width="100%" class="table table-hover" id="dataTables-example">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Address</th>
+                            <th>Nom</th>
+                            <th>Mail</th>
+                            <th>Telephone</th>
+                            <th>Adresse</th>
                             <th></th>
                         </tr>
                     </thead>

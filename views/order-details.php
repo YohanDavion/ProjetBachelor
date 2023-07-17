@@ -30,17 +30,17 @@ if($statement->rowCount() > 0) {
 						<table class="table">
 							<thead>
 								<tr>
-									<th>Item Name</th>
-									<th>Item Price</th>
-									<th>Quantity</th>
-									<th>Sub Total</th>
+									<th>Nom</th>
+									<th>Prix</th>
+									<th>Quantité(s)</th>
+									<th>Total</th>
 								</tr>
 							</thead>
 							<tbody>
 								<?php foreach($details as $detail): ?>
                                     <tr>
                                         <td><?= htmlspecialchars($detail['title']) ?></td>
-                                        <td>₦<?= number_format($detail['price'], 2) ?></td>
+                                        <td>€<?= number_format($detail['price'], 2) ?></td>
                                         <td><?= htmlspecialchars($detail['quantity']) ?></td>
                                         <td><?= number_format($detail['price'] * $detail['quantity'], 2) ?></td>
                                     </tr>
@@ -49,7 +49,7 @@ if($statement->rowCount() > 0) {
 									<td><b>Total</b></td>
 									<td></td>
 									<td></td>
-									<td><b>₦<?php
+									<td><b>€<?php
                                         $total = 0;
                                         foreach($details as $detail) {
                                             $total += $detail['price'] * $detail['quantity'];
@@ -71,7 +71,7 @@ if($statement->rowCount() > 0) {
             <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <div class="block text-center">
-                    <h2 class="text-center">Transaction not found.</h2>
+                    <h2 class="text-center">Transaction introuvable</h2>
             </div>
             </div>
         </div>

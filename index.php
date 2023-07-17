@@ -58,9 +58,6 @@ Route::add('/about', function() {
     require __DIR__ . '/views/about.php';
 });
 
-Route::add('/privacy-policy', function() {
-    require __DIR__ . '/views/privacy-policy.php';
-});
 
 Route::add('/forgot-password', function() {
     require __DIR__ . '/views/forgot-password.php';

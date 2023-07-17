@@ -1,16 +1,24 @@
 <?php
 
-session_start();
+require __DIR__ . '/header.php';
+require __DIR__ . '/db.php';
+require __DIR__ . '/../csrf.php';
 
-if(!isset($_GET['id'])) {
+//session_start();
+
+if (!isset($_GET['id'])) {
     header('Location: /404');
 }
 
 $inCart = false;
 
+// Vérifier si la clé "cart" existe dans $_SESSION
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = array(); // Initialiser la clé "cart" avec un tableau vide
+}
 
-if(isset($_POST['cart']) && CSRF::validateToken($_POST['token'])) {
-	$_SESSION['cart'][$_POST['id']] = array(
+if (isset($_POST['cart']) && CSRF::validateToken($_POST['token'])) {
+    $_SESSION['cart'][$_POST['id']] = array(
         'id' => $_POST['id'],
         'title' => $_POST['title'],
         'price' => $_POST['price'],
@@ -21,6 +29,7 @@ if(isset($_POST['cart']) && CSRF::validateToken($_POST['token'])) {
     );
 }
 
+
 foreach($_SESSION['cart'] as $item) {
 	if($item['id'] == $_GET['id']) {
 		$inCart = true;
@@ -28,9 +37,7 @@ foreach($_SESSION['cart'] as $item) {
 	}
 }
 
-require __DIR__ . '/header.php';
-require __DIR__ . '/db.php';
-require __DIR__ . '/../csrf.php';
+
 
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $statement = $pdo->prepare("SELECT * FROM products WHERE id=?");
@@ -47,8 +54,8 @@ $relatedItems = $statement->fetchAll(PDO::FETCH_ASSOC);
         <div class="row">
 			<div class="col-md-6">
 				<ol class="breadcrumb">
-					<li><a href="/">Home</a></li>
-					<li><a href="/products">Shop</a></li>
+					<li><a href="/">Accueil</a></li>
+					<li><a href="/products">Produits</a></li>
 					<li class="active"><?= htmlspecialchars($item[0]['category']); ?></li>
 				</ol>
 			</div>
@@ -109,7 +116,7 @@ $relatedItems = $statement->fetchAll(PDO::FETCH_ASSOC);
                         <h2><?= htmlspecialchars($item[0]['title']) ?></h2>
                         <?php CSRF::csrfInputField() ?>
                         <input type="text" name="title" value="<?= htmlspecialchars($item[0]['title']) ?>" hidden>
-                        <p class="product-price">₦<?= number_format($item[0]['price'], 2) ?></p>
+                        <p class="product-price">€<?= number_format($item[0]['price'], 2) ?></p>
                         <input type="text" name="price" value="<?= htmlspecialchars($item[0]['price']) ?>" hidden>
                         <input type="text" name="image" value="<?= htmlspecialchars(unserialize($item[0]['images'])[0]) ?>" hidden>
                         <p class="product-description mt-20">
@@ -117,13 +124,13 @@ $relatedItems = $statement->fetchAll(PDO::FETCH_ASSOC);
                             <input type="text" name="description" value="<?= htmlspecialchars($item[0]['description']) ?>" hidden>
                         </p>
                         <div class="product-quantity">
-                            <span>Quantity:</span>
+                            <span>Quantité :</span>
                             <div class="product-quantity-slider">
                                 <input id="product-quantity" type="number" min=1 value="1" name="quantity">
                             </div>
                         </div>
                         <div class="product-category">
-                            <span>Categories:</span>
+                            <span>Catégorie:</span>
                             <ul>
                                 <li><a href="/products?c=<?= htmlspecialchars($item[0]['category']) ?>"><?= htmlspecialchars($item[0]['category']) ?></a></li>
                                 <input type="text" name="category" value="<?= htmlspecialchars($item[0]['category']) ?>" hidden>
@@ -131,9 +138,9 @@ $relatedItems = $statement->fetchAll(PDO::FETCH_ASSOC);
                         </div>
 						<input type="text" name="id" value="<?= htmlspecialchars($item[0]['id']) ?>" hidden>
                         <?php if($inCart): ?>
-							<button name="cart" type="submit" class="btn btn-main text-center" disabled>Add to Cart</button>
+							<button name="cart" type="submit" class="btn btn-main text-center" disabled>Ajouter au panier</button>
 						<?php else: ?>
-							<button name="cart" type="submit" class="btn btn-main text-center">Add to Cart</button>
+							<button name="cart" type="submit" class="btn btn-main text-center">Ajouter au panier</button>
 						<?php endif ?>
                     </div>
                 </form>
@@ -145,7 +152,7 @@ $relatedItems = $statement->fetchAll(PDO::FETCH_ASSOC);
 	<div class="container">
 		<div class="row">
 			<div class="title text-center">
-				<h2>Related Products</h2>
+				<h2>Produits similaires</h2>
 			</div>
 		</div>
 		<div class="row">
@@ -172,7 +179,7 @@ $relatedItems = $statement->fetchAll(PDO::FETCH_ASSOC);
     					</div>
     					<div class="product-content">
     						<h4><a href="/item?id=<?= htmlspecialchars($item['id']) ?>"><?= htmlspecialchars($item['title']) ?></a></h4>
-    						<p class="price">₦ <?= number_format($item['price'], 2) ?></p>
+    						<p class="price">€ <?= number_format($item['price'], 2) ?></p>
     					</div>
     				</div>
     			</div>
