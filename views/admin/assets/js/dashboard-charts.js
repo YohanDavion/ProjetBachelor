@@ -56,7 +56,7 @@ $.ajax({
             data: {
                 labels: response[0],
                 datasets: [{
-                        label: 'Orders',
+                        label: 'Commande',
                         data: response[1],
                         backgroundColor: "rgba(76, 175, 80, 0.5)",
                         borderColor: "#6da252",
@@ -75,7 +75,7 @@ $.ajax({
                     },
                     title: {
                         display: true,
-                        text: 'Number of Orders',
+                        text: 'Nombres de commande',
                         position: 'left',
                     },
                 },

@@ -15,7 +15,7 @@ if($statement->rowCount() > 0) {
 ?>
 <div class="container">
     <div class="page-title">
-        <h3>Orders</h3>
+        <h3>Commande</h3>
     </div>
     <div class="box box-primary">
         <div class="box-body">

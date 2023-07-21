@@ -1,6 +1,8 @@
 <?php 
 
-session_start();
+if(!isset($_SESSION)){
+    session_start();    
+   }
 require __DIR__ . '/../csrf.php';
 require __DIR__ . '/db.php';
 

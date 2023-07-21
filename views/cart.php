@@ -16,18 +16,6 @@ if(isset($_POST['checkout']) && CSRF::validateToken($_POST['token'])) {
     $timestamp = gmdate('Y-m-d h:i:s');
     $statement = $pdo->prepare("INSERT INTO transactions (name, email, address, details, timestamp) VALUES (?, ?, ?, ?, ?)");
     $statement->execute(array($_SESSION['name'], $_SESSION['email'], $_SESSION['address'], $details, $timestamp));
-    $email = new \SendGrid\Mail\Mail();
-    $email->setFrom("donotreply@YOUR_SENGRID_DOMAIN", "COMPANY NAME");
-    $email->setSubject("Invoice");
-    $email->addTo($_SESSION['email'], $_SESSION['name']);
-    $message = generateInvoice($timestamp);
-    $email->addContent("text/html", $message);
-    $sendgrid = new \SendGrid($key);
-    try {
-      $sendgrid->send($email);
-    } catch (Exception $e) {
-      
-    }
     header('Location: /confirmation');
   }
 }
@@ -40,8 +28,8 @@ if(isset($_POST['checkout']) && CSRF::validateToken($_POST['token'])) {
       <div class="col-md-6 col-md-offset-3">
         <div class="block text-center">
         	<i class="tf-ion-ios-cart-outline"></i>
-          	<h2 class="text-center">Votre panier est vide.</h2>
-          	<a href="/products" class="btn btn-main mt-20">Revenir aux produits</a>
+          	<h2 class="text-center">Your cart is currently empty.</h2>
+          	<a href="/products" class="btn btn-main mt-20">Return to shop</a>
       </div>
     </div>
   </div>
@@ -59,11 +47,11 @@ if(isset($_POST['checkout']) && CSRF::validateToken($_POST['token'])) {
                 <table class="table">
                   <thead>
                     <tr>
-                      <th class="">Nom produit</th>
-                      <th class="">Prix</th>
-                      <th class="">Quantité</th>
+                      <th class="">Item Name</th>
+                      <th class="">Item Price</th>
+                      <th class="">Quantity</th>
                       <th class="">Actions</th>
-                      <th class="">Prix Total</th>
+                      <th class="">Sub Total</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -76,12 +64,12 @@ if(isset($_POST['checkout']) && CSRF::validateToken($_POST['token'])) {
                               <a href="#!"><?= htmlspecialchars($item['title']) ?></a>
                             </div>
                           </td>
-                          <td class="">€<?= number_format($item['price'], 2) ?></td>
+                          <td class="">₦<?= number_format($item['price'], 2) ?></td>
                           <td class="">   <?= htmlspecialchars($item['quantity']) ?></td>
                           <td class="">
-                            <a href="/cart-remove-item?id=<?= $item['id'] ?>" class="product-remove">Retirer</a>
+                            <a href="/cart-remove-item?id=<?= $item['id'] ?>" class="product-remove">Remove</a>
                           </td>
-                          <td class="">€<?= number_format($item['price'] * htmlspecialchars($item['quantity']), 2) ?></td>
+                          <td class="">₦<?= number_format($item['price'] * htmlspecialchars($item['quantity']), 2) ?></td>
                         </tr>
                       <?php endforeach; ?>
 
@@ -94,7 +82,7 @@ if(isset($_POST['checkout']) && CSRF::validateToken($_POST['token'])) {
                       <td class=""></td>
                       <td class=""></td>
                       <td class=""></td>
-                      <td class="">€<?php
+                      <td class="">₦<?php
                           if(!isset($_SESSION['cart'])) {
                             echo '0.00';
                           } else {
@@ -111,7 +99,7 @@ if(isset($_POST['checkout']) && CSRF::validateToken($_POST['token'])) {
                 </table>
                 <form action="/cart" method="post">
                   <?php CSRF::csrfInputField() ?>
-                  <button name="checkout" type="submit" class="btn btn-main pull-right">Commander</button>
+                  <button name="checkout" type="submit" class="btn btn-main pull-right">Checkout</button>
                 </form>
               </form>
             </div>

@@ -44,7 +44,7 @@ $orders = $statement->fetchAll(PDO::FETCH_ASSOC);
                                     echo $total;
                                     ?>
                                 </td>
-                                <td><a href="/order-details?id=<?= htmlspecialchars($order['id']) ?>" class="btn btn-default">View</a></td>
+                                <td><a href="/order-details?id=<?= htmlspecialchars($order['id']) ?>" class="btn btn-default">Visualiser</a></td>
                                 </tr>
                             <?php endforeach; ?>
                             </tbody>

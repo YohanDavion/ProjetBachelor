@@ -1,6 +1,8 @@
 <?php 
 
-session_start();
+if(!isset($_SESSION)){
+  session_start();    
+ }
 
 if(str_contains($_SERVER['HTTP_REFERER'], '/cart')) {
   unset($_SESSION['cart']); 

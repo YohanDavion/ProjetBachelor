@@ -73,7 +73,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
 <div class="container">
     <div class="page-title">
         <h3>Products
-        <a href="/admin/products/create" class="btn btn-sm btn-outline-primary float-end"><i class="fas fa-plus"></i> Add</a>
+        <a href="/admin/products/create" class="btn btn-sm btn-outline-primary float-end"><i class="fas fa-plus"></i>Ajouter</a>
         </h3>
     </div>
     <?php if($edit): ?>
